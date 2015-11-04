@@ -1,0 +1,101 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (4.2.4)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
+    autoprefixer-rails (6.0.3)
+      execjs
+      json
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.9.1.1)
+    csso-rails (0.3.4)
+      execjs (>= 1)
+    dimensions (1.3.0)
+    evil-blocks-rails (0.6.3)
+      sprockets (>= 2)
+    evil-front (0.3.10)
+      i18n
+      nokogiri (>= 1)
+      rails-sass-images (>= 0.3)
+      rubypants-unicode
+      sass (>= 3.2.9)
+      slim (>= 1.3.9)
+      sprockets (>= 1)
+      standalone_typograf (>= 3.0.1)
+      unicode_utils (>= 1.4)
+    evil-front-all (0.3.1)
+      autoprefixer-rails (>= 3.0)
+      coffee-script (>= 2.2.0)
+      csso-rails (>= 0.3)
+      evil-blocks-rails (>= 0.2)
+      evil-front (~> 0.3.0)
+      jquery-cdn (>= 1)
+      sprockets (>= 1)
+      uglifier (>= 2.1.1)
+    execjs (2.6.0)
+    i18n (0.7.0)
+    jquery-cdn (2.1.4)
+      sprockets (>= 2)
+    json (1.8.3)
+    libv8 (3.16.14.13)
+    mime-types (2.6.2)
+    mini_portile (0.6.2)
+    minitest (5.8.2)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+    r18n-core (2.1.0)
+    rack (1.6.4)
+    rack-protection (1.5.3)
+      rack
+    rails-sass-images (1.0.0)
+      dimensions (> 0)
+      mime-types (> 0)
+      sass (> 0)
+    rake (10.4.2)
+    ref (2.0.0)
+    rubypants-unicode (0.2.5)
+    sass (3.4.19)
+    sinatra (1.4.6)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    slim (3.0.6)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
+    sprockets (3.4.0)
+      rack (> 1, < 3)
+    standalone_typograf (3.0.2)
+      activesupport
+    temple (0.7.6)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
+    thread_safe (0.3.5)
+    tilt (2.0.1)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    uglifier (2.7.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
+    unicode_utils (1.4.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  evil-front-all (>= 0.3.1)
+  jquery-cdn (>= 2.1.3)
+  json
+  r18n-core
+  rake
+  sinatra
+  therubyracer
+
+BUNDLED WITH
+   1.10.6
