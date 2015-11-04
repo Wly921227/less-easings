@@ -1,0 +1,22 @@
+{
+  "name": "less-easings",
+  "version": "1.0.0",
+  "description": "less variables, mixins for easing functions",
+  "main": "index.js",
+  "dependencies": {
+    "grunt-cli": "^0.1.13"
+  },
+  "devDependencies": {
+    "grunt-cli": "^0.1.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "less",
+    "easing",
+    "transition"
+  ],
+  "author": "Vitaly Rybka <vitaly.rybka@gmail.com>",
+  "license": "ISC"
+}
