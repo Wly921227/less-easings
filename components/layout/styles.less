@@ -1,0 +1,64 @@
+// components/layout/styles.less
+
+._less-easings-list(@c) when (@c > 0) {
+  ._less-easings-list(@c - 1);
+  @item: extract(@lessEasingsVars-list, @c);
+
+  &.@{item} {
+    .line {
+      transition: all 1s @@item;
+    }
+  }
+}
+
+.l-less-easings-list {
+  list-style-type: none;
+  display: flex;
+  .less-easing-item {
+    display: inline-block;
+    vertical-align: top;
+    width: @less-easing-item-width;
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      .line {
+        bottom: @less-easing-item-height - 5px;
+      }
+    }
+    ._less-easings-list(@lessEasingsVars-list-length);
+  }
+  .example-holder,
+  .box {
+    height: @less-easing-item-height;
+  }
+  .example-holder {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .box {
+    background: @darkblue;
+    border: 2px solid @darkgray;
+  }
+  .line {
+    height: 10px;
+    margin: 0;
+    background: @red-line;
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    border: none;
+  }
+  svg {
+    path {
+      fill: @TRANSPARENT;
+      fill: fade(@WHITE, 0%);
+      stroke: @WHITE;
+      stroke-width: 3px;
+    }
+  }
+}
