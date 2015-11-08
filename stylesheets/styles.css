@@ -370,12 +370,10 @@ dl {
 ul {
   list-style-position: inside;
   list-style: disc;
-  padding-left: 20px;
 }
 ol {
   list-style-position: inside;
   list-style: decimal;
-  padding-left: 20px;
 }
 dl dt {
   font-weight: bold;
@@ -415,7 +413,7 @@ Full-Width Styles
 }
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 940px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -548,12 +546,15 @@ Small Device Styles
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 .l-less-easings-list .less-easing-item {
   display: inline-block;
   vertical-align: top;
-  width: 120px;
-  margin-right: 10px;
+  width: 140px;
+  margin: 0 10px 10px 0;
 }
 .l-less-easings-list .less-easing-item:last-child {
   margin-right: 0;
@@ -680,6 +681,10 @@ Small Device Styles
   bottom: 10px;
   left: 0;
   border: none;
+}
+.l-less-easings-list svg {
+  height: 100px;
+  width: 100%;
 }
 .l-less-easings-list svg path {
   fill: transparent;
