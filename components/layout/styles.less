@@ -14,11 +14,12 @@
 .l-less-easings-list {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   .less-easing-item {
     display: inline-block;
     vertical-align: top;
     width: @less-easing-item-width;
-    margin-right: 10px;
+    margin: 0 10px 10px 0;
     &:last-child {
       margin-right: 0;
     }
@@ -54,6 +55,8 @@
     border: none;
   }
   svg {
+    height: @less-easing-item-height;
+    width: 100%;
     path {
       fill: @TRANSPARENT;
       fill: fade(@WHITE, 0%);
