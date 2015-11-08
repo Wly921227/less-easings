@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Less-easings: less variables, mixins for easing functions">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/styles.css">
     <title>Less-easings</title>
@@ -396,6 +396,35 @@
               </div>
               <hr class="line">
             </div>
+          </li>
+        </ul>
+      </section>
+      <section class="inner">
+        <h3>
+          Usage
+        </h3>
+        <ul class="l-usage">
+          <li class="usage-item">
+            Download <a href="https://github.com/var-bin/less-easings/tree/master/less/lessEasingsVars.less">lessEasingsVars.less</a>
+          </li>
+          <li class="usage-item">
+            Include <code>lessEasingsVars.less</code> with <code>@import "lessEasingsVars";</code> to your main <code>.less</code> file.
+            <p>
+              <pre class="less"><code>// styles/styles.less
+
+@import "lessEasingsVars";</code></pre>
+            </p>
+          </li>
+          <li>
+            Use variables for create awesome easing functions.
+            <p>
+              <pre class="less"><code>// easings.less
+
+div {
+  -webkit-transition: all 600ms @easeInSine;
+          transition: all 600ms @easeInSine;
+}</code></pre>
+            </p>
           </li>
         </ul>
       </section>
