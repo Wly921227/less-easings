@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "less variables, mixins for easing functions",
   "main": "index.js",
-  "dependencies": {
-    "grunt-cli": "^0.1.13"
-  },
   "devDependencies": {
     "yamljs": "^0.2.4"
   },
