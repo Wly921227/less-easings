@@ -1,121 +1,4 @@
 /*******************************************************************************
-MeyerWeb Reset
-*******************************************************************************/
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  font: inherit;
-  vertical-align: baseline;
-  border: 0;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-/*******************************************************************************
 Theme Styles
 *******************************************************************************/
 
@@ -171,7 +54,7 @@ h6 {
 }
 
 p {
-  margin: 10px 0 15px 0;
+  margin: 10px 0 15px;
 }
 
 footer p {
@@ -208,7 +91,7 @@ img {
   position: relative;
   max-width: 739px;
   margin: 0 auto;
-  margin: 10px 0 10px 0;
+  margin: 10px 0;
   padding: 5px;
   border: 1px solid #ebebeb;
   box-shadow: 0 0 5px #ebebeb;
@@ -230,14 +113,14 @@ code {
   font-size: 14px;
   color: #222;
   border-radius: 2px;
-  background-color: #fff;
+  background-color: @WHITE;
 }
 
 pre {
   overflow: auto;
   width: 100%;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  box-shadow: 0 0 10px fade(@BLACK, 10%);
   &.less {
     background: @darkgray;
     code {
@@ -250,7 +133,7 @@ pre {
 code {
   margin: 0 3px;
   padding: 3px;
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  box-shadow: 0 0 10px fade(@BLACK, 10%);
 }
 
 pre code {
@@ -270,6 +153,7 @@ ul,
 ol,
 dl {
   margin-bottom: 15px;
+  padding: 0;
 }
 
 ul {
@@ -305,7 +189,7 @@ table {
 th {
   padding: 10px;
   font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #fff;
+  color: @WHITE;
   background: #373737;
 }
 
@@ -342,88 +226,49 @@ Full-Width Styles
   right: 10px;
   padding: 10px 50px 10px 10px;
   font-weight: 700;
-  color: #fff;
+  color: @WHITE;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
   background: url("../images/blacktocat.png") #0090ff no-repeat 95% 50%;
-  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  box-shadow: 0 0 10px fade(@BLACK, 50%);
 }
 
-#header_wrap {
+.header-wrap {
   background: #212121;
   background: linear-gradient(top, #373737, #212121);
 }
 
-#header_wrap .inner {
+.header-wrap .inner {
   padding: 50px 10px 30px;
 }
 
-#project_title {
+.project-title {
   margin: 0;
   font-size: 42px;
   font-weight: 700;
-  color: #fff;
+  color: @WHITE;
   text-shadow: #111 0 0 10px;
 }
 
-#project_tagline {
+.project-tagline {
   font-size: 24px;
   font-weight: 300;
-  color: #fff;
+  color: @WHITE;
   background: none;
   text-shadow: #111 0 0 10px;
 }
 
-#downloads {
-  position: absolute;
-  z-index: 10;
-  right: 0;
-  bottom: -40px;
-  width: 210px;
-  height: 70px;
-  background: url("../images/icon_download.png") no-repeat 0 90%;
-}
-
-.zip_download_link {
-  display: block;
-  float: right;
-  overflow: hidden;
-  width: 90px;
-  height: 70px;
-  text-indent: -5000px;
-  background: url("../images/sprite_download.png") no-repeat bottom left;
-}
-
-.tar_download_link {
-  display: block;
-  float: right;
-  overflow: hidden;
-  width: 90px;
-  height: 70px;
-  margin-left: 10px;
-  text-indent: -5000px;
-  background: url("../images/sprite_download.png") no-repeat bottom right;
-}
-
-.zip_download_link:hover {
-  background: url("../images/sprite_download.png") no-repeat top left;
-}
-
-.tar_download_link:hover {
-  background: url(../images/sprite_download.png) no-repeat top right;
-}
-
-#main_content_wrap {
+.main-content-wrap {
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
   background: #f2f2f2;
 }
 
-#main_content {
+.main-content {
   padding-top: 40px;
 }
 
-#footer_wrap {
+.footer-wrap {
   background: #212121;
 }
 
@@ -438,16 +283,12 @@ Small Device Styles
     font-size: 14px;
   }
 
-  #downloads {
-    display: none;
-  }
-
   .inner {
     min-width: 320px;
     max-width: 480px;
   }
 
-  #project_title {
+  .project-title {
     font-size: 32px;
   }
 
