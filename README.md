@@ -1,11 +1,9 @@
 # less-easings
-less variables based on [easings.net](http://easings.net/)
+[Less](http://lesscss.org/) variables for [easing functions](http://www.w3.org/TR/css3-transitions/#transition-timing-function-property) based on [easings.net](http://easings.net/)
 
-## Simple cheat sheet to help developers pick the right easing function.
-
-### Variables usage
+### Usage
 * Download [lessEasingsVars.less](https://github.com/var-bin/less-easings/tree/master/less/lessEasingsVars.less)
-* Include lessEasingsVars.less with `@import "lessEasingsVars";` to your main .less file. e.g.
+* Include lessEasingsVars.less with `@import "lessEasingsVars";` to your main `.less` file.
 ```less
 // styles/styles.less
 
