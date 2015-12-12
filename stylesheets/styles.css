@@ -623,7 +623,8 @@ Small Device Styles
 .l-less-easings-list .less-easing-item:last-child {
   margin-right: 0;
 }
-.l-less-easings-list .less-easing-item:hover .line {
+.l-less-easings-list .less-easing-item:hover .line,
+.l-less-easings-list .less-easing-item:focus .line {
   bottom: 95px;
 }
 .l-less-easings-list .less-easing-item.easeInSine .line {
