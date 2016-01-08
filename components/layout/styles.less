@@ -66,3 +66,48 @@
     }
   }
 }
+
+// l-nav
+.l-nav {
+  .nav {
+    list-style: none;
+    margin: 0;
+  }
+  .nav__item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+    position: relative;
+    font-weight: 600;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      height: 2px;
+      background: @link-color;
+      width: 0;
+      transition: width .6s @easeInSine;
+    }
+    &:hover,
+    &.is-active {
+      &::before {
+        width: 100%;
+      }
+    }
+    &:hover {
+      color: @WHITE;
+      &::before {
+        background: @WHITE;
+      }
+    }
+  }
+}
