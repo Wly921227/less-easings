@@ -6,6 +6,9 @@
     <meta name="description" content="Less-easings: less variables, mixins for easing functions">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/styles.css">
     <script type="text/javascript" src="javascripts/main.js"></script>
+    <script type="text/javascript">
+      le.init();
+    </script>
     <title>
       Less-easings
     </title>
@@ -25,10 +28,10 @@
             <a href="http://lesscss.org/" target="_blank">Less</a> variables for <a href="http://www.w3.org/TR/css3-transitions/#transition-timing-function-property" target="_blank">easing functions</a> based on <a href="http://easings.net/" target="_blank">easings.net</a>
           </h2>
         </hgroup>
-        <nav class="l-nav">
+        <nav class="l-nav" id="nav">
           <ul class="nav">
-            <li class="nav__item">
-              <a href="#list" class="is-active">
+            <li class="nav__item is-active">
+              <a href="#list">
                 List of variables
               </a>
             </li>
