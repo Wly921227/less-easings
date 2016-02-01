@@ -69,6 +69,8 @@
 
 // l-nav
 .l-nav {
+  top: -20px;
+  transition: top .6s @easeInOutBack;
   .nav {
     list-style: none;
     margin: 0;
@@ -79,8 +81,24 @@
     margin-right: 15px;
     position: relative;
     font-weight: 600;
+    cursor: pointer;
     &:last-child {
       margin-right: 0;
+    }
+    &.is-active,
+    &:hover {
+      a {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+    &:hover {
+      a {
+        &::before {
+          background: @WHITE;
+        }
+      }
     }
   }
   a {
@@ -95,19 +113,21 @@
       height: 2px;
       background: @link-color;
       width: 0;
-      transition: width .6s @easeInSine;
+      transition: width .3s @easeInSine;
     }
-    &:hover,
-    &.is-active {
-      &::before {
-        width: 100%;
-      }
-    }
-    &:hover {
-      color: @WHITE;
-      &::before {
-        background: @WHITE;
-      }
+  }
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 10px 0;
+    background: fade(@BLACK, 80%);
+    box-shadow: 0 3px 2px fade(@BLACK, 80%);
+    .nav {
+      width: @inner-width;
+      margin: auto;
     }
   }
 }
