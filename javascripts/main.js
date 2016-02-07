@@ -290,8 +290,6 @@ var le = (function () {
         el.addClass(p, 'is-active').removeClass(el.siblings(pp, p), 'is-active');
 
         window.scrollTo(0, currEl.top);
-
-        console.log('currEl.top: ', currEl.top, 'currEl.bottom: ', currEl.bottom);
       }
     }
 
@@ -305,8 +303,6 @@ var le = (function () {
       } else {
         el.removeClass(nav, 'is-fixed');
       }
-
-      console.log('!!!scrolled!!!', 'elYOffset: ', elYOffset, 'coords.top: ', coords.top, 'headerHeight: ', headerHeight);
     }
 
     e.on('click', nav, delegate);
@@ -318,7 +314,7 @@ var le = (function () {
         DOMContentLoaded = 'DOMContentLoaded';
 
     function handler() {
-      console.log('DOMContentLoaded');
+      //console.log('DOMContentLoaded');
       nav();
     }
 
@@ -330,7 +326,6 @@ var le = (function () {
   }
 
   return {
-    init: init,
-    el: el
+    init: init
   };
 })();
