@@ -33,20 +33,21 @@ var le = (function () {
   }
 
   var el = (function () {
+    // get DOM element by ID
     function getById(id) {
       if (id) {
         return doc.getElementById(id);
       }
       return this;
     }
-
+    // get DOM children elements, only tags
     function children(el) {
       if (el) {
         return el.children;
       }
       return this;
     }
-
+    // get DOM parent element
     function parent(el) {
       if (el) {
         return el.parentElement;
@@ -70,7 +71,7 @@ var le = (function () {
 
       return this;
     }
-
+    // get all DOM siblings for select DOM element
     function siblings(el, skipEl) {
       skipEl = skipEl || el;
 
@@ -121,7 +122,7 @@ var le = (function () {
         return this;
       }
     }
-
+    // add class for DOM element
     function addClass(el, cl) {
       var i = 0,
           length = 0;
@@ -138,7 +139,7 @@ var le = (function () {
 
       return this;
     }
-
+    // remove class for DOM element
     function removeClass(el, cl) {
       var i = 0,
           length = 0;
@@ -155,7 +156,7 @@ var le = (function () {
 
       return this;
     }
-
+    // toggle class for DOM element
     function toggleClass(el, cl) {
       var i = 0,
           length = 0;
@@ -172,7 +173,7 @@ var le = (function () {
 
       return this;
     }
-
+    // get attributes for DOM element
     function getAttr(el, attr) {
       if (el) {
         return el.getAttribute(attr);
@@ -180,7 +181,13 @@ var le = (function () {
 
       return this;
     }
-
+    /**
+     * pageY, pageX - the start points coordinates of document
+     * clientY, clientX - the start points coordinates of window
+     *
+     * pageY = clientY + current vertical scroll
+     * pageX = clientX + current gorizontal scroll
+     */
     function getCoords(el, offset) {
       offset = offset || false;
       var box;
@@ -188,24 +195,24 @@ var le = (function () {
         box = el.getBoundingClientRect();
         if (!offset) {
           return {
-            top: box.top + pageYOffset,
+            top: box.top + pageYOffset, // pageY
             right: box.right + pageXOffset,
             bottom: box.bottom + pageYOffset,
-            left: box.left + pageXOffset
+            left: box.left + pageXOffset // pageX
           };
         } else {
           return {
-            top: box.top,
+            top: box.top, // clientY
             right: box.right,
             bottom: box.bottom,
-            left: box.left
+            left: box.left // clientX
           };
         }
       }
 
       return this;
     }
-
+    // pageY
     function y(el) {
       if (el) {
         return getCoords(el).top;
@@ -213,7 +220,7 @@ var le = (function () {
 
       return this;
     }
-
+    // pageX
     function x(el) {
       if (el) {
         return getCoords(el).left;
@@ -221,7 +228,7 @@ var le = (function () {
 
       return this;
     }
-
+    // clientY
     function yOffset(el) {
       if (el) {
         return getCoords(el, true).top;
@@ -229,7 +236,7 @@ var le = (function () {
 
       return this;
     }
-
+    // clientX
     function xOffset(el) {
       if (el) {
         return getCoords(el, true).left;
@@ -262,6 +269,7 @@ var le = (function () {
 
   function nav() {
     var nav = el.getById(navID),
+        headerHeight = doc.querySelector('.header-wrap').offsetHeight;
         e = _events();
 
     function delegate(e) {
@@ -283,7 +291,7 @@ var le = (function () {
 
         window.scrollTo(0, currEl.top);
 
-        console.log('href: ', href, 'currEl: ', currEl);
+        console.log('currEl.top: ', currEl.top, 'currEl.bottom: ', currEl.bottom);
       }
     }
 
@@ -292,14 +300,13 @@ var le = (function () {
           elYOffset = el.yOffset(nav, true),
           elXOffset = el.xOffset(nav, true);
 
-      if (coords.top > 0) {
+      if (pageYOffset > headerHeight) {
         el.addClass(nav, 'is-fixed');
       } else {
         el.removeClass(nav, 'is-fixed');
       }
 
-      //el.addClass(nav, 'is-fixed');
-      console.log('!!!scrolled!!!', elYOffset, coords);
+      console.log('!!!scrolled!!!', 'elYOffset: ', elYOffset, 'coords.top: ', coords.top, 'headerHeight: ', headerHeight);
     }
 
     e.on('click', nav, delegate);
